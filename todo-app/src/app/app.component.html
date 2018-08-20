@@ -1,9 +1,18 @@
 <section class="noteapp">
   <header class="header">
     <h1>Google Keep</h1>
-    <input class="new-note" placeholder="Add Title" autofocus="" [(ngModel)]="newNote.title">
-    <input class="new-note" placeholder="Add Text" autofocus="" [(ngModel)]="newNote.text" (keyup.enter)="addNote()">
-  </header>
+
+    <div class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Title" [(ngModel)]="newNote.title">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Text" [(ngModel)]="newNote.text" (keyup.enter)="addNote()">
+      </mat-form-field>
+    </div>
+
+
+    </header>
   <section class="main" *ngIf="notes.length > 0">
     <ul class="note-list">
       <li *ngFor="let note of notes" [class.completed]="note.isPinned">
