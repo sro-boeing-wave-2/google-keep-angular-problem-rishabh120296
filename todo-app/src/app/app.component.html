@@ -1,0 +1,22 @@
+<section class="noteapp">
+  <header class="header">
+    <h1>Google Keep</h1>
+    <input class="new-note" placeholder="Add Title" autofocus="" [(ngModel)]="newNote.title">
+    <input class="new-note" placeholder="Add Text" autofocus="" [(ngModel)]="newNote.text" (keyup.enter)="addNote()">
+  </header>
+  <section class="main" *ngIf="notes.length > 0">
+    <ul class="note-list">
+      <li *ngFor="let note of notes" [class.completed]="note.isPinned">
+        <div class="view">
+          <input class="toggle" type="checkbox" (click)="toggleIsPinned(note)" [checked]="note.isPinned">
+          <label>Title : {{note.title}}</label><br>
+          <label>Text: {{note.text}}</label>
+          <button class="destroy" (click)="removeNote(note)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer" *ngIf="notes.length > 0">
+    <span class="note-count">Total <strong>{{notes.length}}</strong> {{notes.length == 1 ? 'note' : 'notes'}}</span>
+  </footer>
+</section>
