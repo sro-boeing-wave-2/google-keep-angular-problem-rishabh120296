@@ -1,0 +1,14 @@
+<header class="header">
+
+  <h1>Google Keep</h1>
+
+  <div class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Title" [(ngModel)]="newNote.title">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Text" [(ngModel)]="newNote.text" (keyup.enter)="addNote()">
+    </mat-form-field>
+  </div>
+
+  </header>

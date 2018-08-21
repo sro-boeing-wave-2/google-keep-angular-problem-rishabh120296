@@ -7,10 +7,12 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 
 import { AppComponent } from './app.component';
+import { NoteCreateComponent } from './note-create/note-create.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NoteCreateComponent
   ],
   imports: [
     BrowserModule,

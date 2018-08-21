@@ -14,9 +14,8 @@ export class AppComponent {
   constructor(private notesServiceService: NotesServiceService) {
   }
 
-  addNote() {
-    this.notesServiceService.addNote(this.newNote);
-    this.newNote = new Note();
+  onAddNote(note: Note) {
+    this.notesServiceService.addNote(note);
   }
 
   toggleIsPinned(note) {
