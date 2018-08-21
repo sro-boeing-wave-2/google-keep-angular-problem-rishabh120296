@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Note} from './note';
 import { NotesServiceService } from './notes-service.service';
 
@@ -6,27 +6,51 @@ import { NotesServiceService } from './notes-service.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: []
+  providers: [NotesServiceService]
 })
-export class AppComponent {
-  newNote: Note = new Note();
+export class AppComponent implements OnInit {
+  notes: Note[] = [];
 
   constructor(private notesServiceService: NotesServiceService) {
   }
 
-  onAddNote(note: Note) {
-    this.notesServiceService.addNote(note);
+  public ngOnInit() {
+    this.notesServiceService
+      .getAllNotes()
+      .subscribe(
+        (notes) => {
+          this.notes = notes;
+        }
+      );
+  }
+
+  onAddNote(note) {
+    this.notesServiceService
+      .addNote(note)
+      .subscribe(
+        (newNote) => {
+          this.notes = this.notes.concat(newNote);
+        }
+      );
   }
 
   onToggleIsPinned(note) {
-    this.notesServiceService.toggleIsPinned(note);
+    this.notesServiceService
+      .toggleIsPinned(note)
+      .subscribe(
+        (updatedNote) => {
+          note = updatedNote;
+        }
+      );
   }
 
   onRemoveNote(note) {
-    this.notesServiceService.deleteNoteById(note.id);
-  }
-
-  get notes() {
-    return this.notesServiceService.getAllNotes();
+    this.notesServiceService
+      .deleteNoteById(note.id)
+      .subscribe(
+        (_) => {
+          this.notes = this.notes.filter((t) => t.id !== note.id);
+        }
+      );
   }
 }

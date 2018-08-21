@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { NoteCreateComponent } from './note-create/note-create.component';
 import { NoteListComponent } from './note-list/note-list.component';
 import { NoteListItemComponent } from './note-list-item/note-list-item.component';
 import { NoteListFooterComponent } from './note-list-footer/note-list-footer.component';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { NoteListFooterComponent } from './note-list-footer/note-list-footer.com
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatToolbarModule,
     MatInputModule
   ],
-  providers: [NotesServiceService],
+  providers: [NotesServiceService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

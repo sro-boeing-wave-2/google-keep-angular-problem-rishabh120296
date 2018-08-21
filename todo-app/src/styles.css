@@ -2,5 +2,6 @@
 @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 
 body{
-background-color: #303030;
+margin: 0px;
+background-color: rgb(112, 112, 112);
 }
