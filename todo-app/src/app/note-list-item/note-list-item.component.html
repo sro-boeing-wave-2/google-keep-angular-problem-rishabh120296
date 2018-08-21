@@ -1,7 +1,6 @@
-<div class="view">
-  <input class="toggle" type="checkbox" (click)="toggleNoteIsPinned(note)" [checked]="note.complete">
-  <label>Title: {{note.title}}</label>
-  <br>
-  <label>Text: {{note.text}}</label>
-  <button class="destroy" (click)="removeNote(note)">Delete</button>
+<div>
+  <mat-icon (click)="removeNote(note)">delete</mat-icon>
+  <mat-checkbox (click)="toggleNoteIsPinned(note)" [checked]="note.complete"></mat-checkbox>
+  <mat-card-title>{{note.title}}</mat-card-title>
+  <mat-card-content>{{note.text}}</mat-card-content>
 </div>

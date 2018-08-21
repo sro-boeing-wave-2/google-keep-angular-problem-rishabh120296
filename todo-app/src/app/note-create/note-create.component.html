@@ -1,15 +1,17 @@
 <header class="header">
-  <mat-toolbar color = 'primary'>
-    <h1>Google Keep</h1>
-  </mat-toolbar>
-  <h3> Create a note :</h3>
-  <div class="example-form">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Title" [(ngModel)]="newNote.title">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Text" [(ngModel)]="newNote.text" (keyup.enter)="addNote()">
-    </mat-form-field>
-  </div>
+
+  <mat-card>
+    <h3> Create a note :</h3>
+    <div class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Title" [(ngModel)]="newNote.title">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Text" [(ngModel)]="newNote.text" (keyup.enter)="addNote()">
+      </mat-form-field>
+    </div>
+
+  </mat-card>
+
 
   </header>

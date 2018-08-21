@@ -3,7 +3,7 @@ h1, h3 {
 }
 
 h3 {
-  color:maroon;
+  color:#e91e63;
 }
 
 .example-form {
@@ -15,3 +15,10 @@ h3 {
 .example-full-width {
   width: 100%;
 }
+
+mat-card {
+  max-width: 40%;
+  margin-top: 1%;
+  margin-left: 5%;
+}
+

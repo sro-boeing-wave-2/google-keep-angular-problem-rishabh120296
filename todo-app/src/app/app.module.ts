@@ -3,9 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 
 import { AppComponent } from './app.component';
 import { NotesServiceService } from './notes-service.service';
@@ -28,10 +33,13 @@ import { ApiService } from './api.service';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [NotesServiceService, ApiService],
   bootstrap: [AppComponent]

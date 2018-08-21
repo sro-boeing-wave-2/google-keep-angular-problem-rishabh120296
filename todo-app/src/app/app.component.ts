@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       );
   }
 
-  onToggleIsPinned(note) {
+  onToggleNoteIsPinned(note) {
     this.notesServiceService
       .toggleIsPinned(note)
       .subscribe(

@@ -1,9 +1,14 @@
 <section class="noteapp">
 
-  <app-note-create (add)="onAddNote($event)"></app-note-create>
+    <mat-toolbar color = 'primary'>
+        <h1>Google Keep</h1>
+      </mat-toolbar>
 
-  <app-note-list [notes]="notes" (toggleIsPinned)="onToggleNoteIsPinned($event)"
-                 (remove)="onRemoveNote($event)"></app-note-list>
+      <app-note-create (add)="onAddNote($event)"></app-note-create>
+        <app-note-list [notes]="notes" (toggleIsPinned)="onToggleNoteIsPinned($event)"
+        (remove)="onRemoveNote($event)"></app-note-list>
+
+
 
   <app-note-list-footer [notes]="notes"></app-note-list-footer>
 

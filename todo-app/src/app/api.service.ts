@@ -55,7 +55,7 @@ export class ApiService {
   public updateNote(note: Note): Observable<Note> {
     // will use this.http.put()
     return this.http
-    .put(API_URL + '/Notes/' + note.id, Note)
+    .put(API_URL + '/Notes/' + note.id, note)
     .pipe(map(response => {
       return new Note(response.json());
     }))
