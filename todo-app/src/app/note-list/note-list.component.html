@@ -1,0 +1,10 @@
+<section class="main" *ngIf="notes.length > 0">
+    <ul class="note-list">
+      <li *ngFor="let note of notes" [class.completed]="note.isPinned">
+          <app-note-list-item
+          [note]="note"
+          (toggleIsPinned)="onToggleIsPinned($event)"
+          (remove)="onRemoveNote($event)"></app-note-list-item>
+      </li>
+    </ul>
+  </section>

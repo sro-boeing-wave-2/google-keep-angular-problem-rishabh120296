@@ -6,7 +6,7 @@ import { NotesServiceService } from './notes-service.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [NotesServiceService]
+  providers: []
 })
 export class AppComponent {
   newNote: Note = new Note();
@@ -18,11 +18,11 @@ export class AppComponent {
     this.notesServiceService.addNote(note);
   }
 
-  toggleIsPinned(note) {
+  onToggleIsPinned(note) {
     this.notesServiceService.toggleIsPinned(note);
   }
 
-  removeNote(note) {
+  onRemoveNote(note) {
     this.notesServiceService.deleteNoteById(note.id);
   }
 

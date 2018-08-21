@@ -2,21 +2,10 @@
 
   <app-note-create (add)="onAddNote($event)"></app-note-create>
 
-  <section class="main" *ngIf="notes.length > 0">
-    <ul class="note-list">
-      <li *ngFor="let note of notes" [class.completed]="note.isPinned">
-        <div class="view">
-          <input class="toggle" type="checkbox" (click)="toggleIsPinned(note)" [checked]="note.isPinned">
-          <label>Title : {{note.title}}</label><br>
-          <label>Text: {{note.text}}</label>
-          <button class="destroy" (click)="removeNote(note)">Delete</button>
-        </div>
-      </li>
-    </ul>
-  </section>
+  <app-note-list [notes]="notes" (toggleIsPinned)="onToggleNoteIsPinned($event)"
+                 (remove)="onRemoveNote($event)"></app-note-list>
 
-  <footer class="footer" *ngIf="notes.length > 0">
-    <span class="note-count">Total <strong>{{notes.length}}</strong> {{notes.length == 1 ? 'note' : 'notes'}}</span>
-  </footer>
+  <app-note-list-footer [notes]="notes"></app-note-list-footer>
+
 
 </section>

@@ -1,0 +1,7 @@
+<div class="view">
+  <input class="toggle" type="checkbox" (click)="toggleNoteIsPinned(note)" [checked]="note.complete">
+  <label>Title: {{note.title}}</label>
+  <br>
+  <label>Text: {{note.text}}</label>
+  <button class="destroy" (click)="removeNote(note)">Delete</button>
+</div>
