@@ -16,6 +16,9 @@ export class NoteListComponent implements OnInit {
   remove: EventEmitter<Note> = new EventEmitter();
 
   @Output()
+  update: EventEmitter<Note> = new EventEmitter();
+
+  @Output()
   toggleIsPinned: EventEmitter<Note> = new EventEmitter();
 
   constructor() { }
@@ -26,6 +29,10 @@ export class NoteListComponent implements OnInit {
 
   onRemoveNote(note: Note) {
     this.remove.emit(note);
+  }
+
+  onUpdateNote(note: Note) {
+    this.update.emit(note);
   }
 
   ngOnInit() {

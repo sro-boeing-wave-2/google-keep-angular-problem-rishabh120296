@@ -6,7 +6,7 @@
 
       <app-note-create (add)="onAddNote($event)"></app-note-create>
         <app-note-list [notes]="notes" (toggleIsPinned)="onToggleNoteIsPinned($event)"
-        (remove)="onRemoveNote($event)"></app-note-list>
+        (remove)="onRemoveNote($event)" (update)="onUpdateNote($event)"></app-note-list>
 
 
 

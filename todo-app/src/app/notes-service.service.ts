@@ -43,4 +43,3 @@ toggleIsPinned(note: Note){
 }
 
 }
-

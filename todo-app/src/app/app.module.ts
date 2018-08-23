@@ -11,7 +11,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
-
 import { AppComponent } from './app.component';
 import { NotesServiceService } from './notes-service.service';
 import { NoteCreateComponent } from './note-create/note-create.component';

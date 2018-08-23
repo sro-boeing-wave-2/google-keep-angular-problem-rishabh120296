@@ -1,6 +1,19 @@
 <div>
   <mat-icon (click)="removeNote(note)">delete</mat-icon>
-  <mat-checkbox (click)="toggleNoteIsPinned(note)" [checked]="note.complete"></mat-checkbox>
-  <mat-card-title>{{note.title}}</mat-card-title>
-  <mat-card-content>{{note.text}}</mat-card-content>
+  <mat-icon *ngIf="edit" (click)="toggleEdit(edit)">edit</mat-icon>
+  <mat-icon *ngIf="!edit" (click)="updateNote(note)">save</mat-icon>
+  <mat-checkbox (change)="toggleNoteIsPinned(note)" [checked]="note.isPinned"></mat-checkbox>
+  <mat-card-title *ngIf="edit">{{note.title}}</mat-card-title>
+  <mat-card-title *ngIf="!edit">
+    <mat-form-field>
+      <input matInput type="textbox" placeholder="Title" [(ngModel)]="note.title">
+    </mat-form-field>
+  </mat-card-title>
+  <mat-card-content *ngIf="edit">{{note.text}}</mat-card-content>
+  <mat-card-content *ngIf="!edit">
+    <mat-form-field>
+      <input matInput type="textbox" placeholder="Title" [(ngModel)]="note.text">
+    </mat-form-field>
+  </mat-card-content>
+
 </div>

@@ -53,4 +53,14 @@ export class AppComponent implements OnInit {
         }
       );
   }
+
+  onUpdateNote(note) {
+    this.notesServiceService
+      .updateNoteById(note)
+      .subscribe(
+        (updatedNote) => {
+          note = updatedNote;
+        }
+      );
+  }
 }
